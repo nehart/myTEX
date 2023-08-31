@@ -1,0 +1,1144 @@
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% This style provides predefined text and listing boxes based on the listings and tcolorbox package.
+%
+
+%
+% written by 
+%   Norert EHART (norbert@ehart.net)
+%
+
+%
+% The suffix (V001; V002; etc...) is added to garantie backward compatibility.
+% Once a new version is started, the previous version becomes unmaintained.
+%
+
+%
+% Changelog
+%   V001.00 :: 28.03.2023 :: creation of the style (norbert@ehart.net)
+%	V001.01 :: 17.04.2023 :: added "listing options = {texcl=false}" in order to use a underscore (_) in listing environments.
+%
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{myTCB-V001}[2023/04/17 loading package myTCB-V001]
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% lipsum is a LATEX package that produces dummy text
+% this is used for documentation in order to be able to produce dummy text
+%
+% Usage:
+%  \lipsum[4]
+%
+% https://mirror.easyname.at/ctan/macros/latex/contrib/lipsum/lipsum.pdf
+
+% ........................... %
+\RequirePackage{lipsum} % ... % load required package
+% ........................... %
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% xcolor provides easy driver-independent access to several kinds of colors,
+% tints, shades, tones, and mixes of arbitrary colors by means of color expressions 
+% like \color{red!50!green!20!blue} or \color{var} [needs to be defined with \definecolor{var}{}{}].
+% 
+% https://mirror.easyname.at/ctan/macros/latex/contrib/xcolor/xcolor.pdf
+%
+
+% ............................ %
+\RequirePackage{xcolor} % .... % load required package
+% ............................ %
+
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myBOX}{HTML}{000000} % ............... % myBOX myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myBOX}{HTML}{FEEFDE} % ........... % myBOX myTCB color of the background 
+	% ........................................................................ %
+	
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myCODE}{HTML}{000000} % .............. % myCODE myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myCODE}{HTML}{FEEFDE} % .......... % myCODE myTCB color of the background 
+	% ........................................................................ %
+
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_mySTY}{HTML}{000000} % ............... % myCODE myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_mySTY}{HTML}{FEEFDE} % ........... % myCODE myTCB color of the background 
+	% ........................................................................ %
+	
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myTEXEX}{HTML}{000000} % ............. % myCODE myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myTEXEX}{HTML}{FEEFDE} % ......... % myCODE myTCB color of the background 
+	% ........................................................................ %
+	
+	% ........................................................................ %
+	\definecolor{lst_color_coding_comments}{HTML}{009900} % .................. % listing color of comments
+	\definecolor{lst_color_coding_keywords}{HTML}{0000FC} % .................. % listing color of keywords
+	\definecolor{lst_color_coding_numbers}{HTML}{474747} % ................... % listing color of numbers
+	\definecolor{lst_color_coding_strings}{HTML}{9400D1} % ................... % listing color of strings
+	% ........................................................................ %
+
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myFIG}{HTML}{000000} % ............... % myFIG myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myFIG}{HTML}{FFFFFF} % ........... % myFIG myTCB color of the background 
+	% ........................................................................ %
+
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myCODEEX}{HTML}{000000} % ............ % myCODEEX myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myCODEEX}{HTML}{FEEFDE} % ........ % myCODEEX myTCB color of the background 
+	% ........................................................................ %
+
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myTEX}{HTML}{000000} % ............... % myTEX myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myTEX}{HTML}{FEEFDE} % ........... % myTEX myTCB color of the background 
+	% ........................................................................ %
+
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myCONFIG}{HTML}{000000} % ............ % myCONFIG myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myCONFIG}{HTML}{FEEFDE} % ........ % myCONFIG myTCB color of the background 
+	% ........................................................................ %
+
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myCONFIGEX}{HTML}{000000} % .......... % myCONFIGEX myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myCONFIGEX}{HTML}{FEEFDE} % ...... % myCONFIGEX myTCB color of the background 
+	% ........................................................................ %
+
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myFILE}{HTML}{000000} % .............. % myFILE myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myFILE}{HTML}{FEEFDE} % .......... % myFILE myTCB color of the background 
+	% ........................................................................ %
+	
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myOUT}{HTML}{000000} % ............... % myOUT myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myOUT}{HTML}{FEEFDE} % ........... % myOUT myTCB color of the background 
+	% ........................................................................ %
+	
+	% ........................................................................ %
+	\definecolor{myTCB_color_cellborder_myTAB}{HTML}{000000} % ............... % myOUT myTCB color of the border
+	\definecolor{myTCB_color_cellbackground_myTAB}{HTML}{FEEFDE} % ........... % myOUT myTCB color of the background 
+	% ........................................................................ %
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% Images are essential elements in most of the scientific documents. graphicx
+% provides several options to handle images and make them look exactly what you need.
+%
+% If we are compiling using "pdflatex" to produce a PDF, then we can use a number of
+% image formats ...
+%
+%   -) JPG
+%   -) PNG
+%   -) PDF
+%   -) EPS
+%
+
+%
+% \includegraphics[options]{file.ext}
+%
+
+\RequirePackage{graphicx}
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% This makes the wrapfigure environment available and we can place an \includegraphics 
+% command inside it to create a figure around which text will be wrapped. Here is how 
+% we can specify a wrapfigure environment:
+%
+%  \begin{wrapfigure}[lineheight]{position}{width}
+%   	...
+%  \end{wrapfigure}
+%
+
+\RequirePackage{wrapfig}
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% The verbatim environment is a paragraph-making environment that gets LaTeX to print exactly 
+% what you type in. It turns LaTeX into a typewriter with carriage returns and blanks having 
+% the same effect that they would on a typewriter. The output looks exactly as it looks in 
+% the input file. The only text which cannot be placed in the verbatim environment is the 
+% 14-character sequence "\end{verbatim}".
+%
+% Usage:
+%   \begin{verbatim}
+%   [...]
+%   \end{verbatim}
+%
+% https://mirror.kumi.systems/ctan/macros/latex/required/tools/verbatim.pdf
+%
+
+% ............................ %
+\RequirePackage{verbatim} % .. % load required package
+% ............................ %
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% ‘fancyvrb’ is the development of the verbatim macros of the ‘fancybox’ package. 
+% It offers six kinds of extended functionality, compared
+% to the standard LATEX verbatim environment:
+%
+%   # verbatim commands can be used in footnotes
+%   # several verbatim commands are enhanced
+%   # a variety of verbatim environments are provided
+%   # it is also possible to define new customized verbatim environments
+%   # a way is provided to save and restore verbatim text and environment
+%   # here are macros to write and read files in verbatim mode
+%   # you can build example environments (showing both result and verbatim text), with the same versatility as normal verbatim
+%
+% https://texdoc.org/serve/fancyvrb/0
+%
+
+% ............................ %
+\RequirePackage{fancyvrb} % .. % load required package
+% ............................ %
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% The listings package is a source code printer for LATEX. You can typeset
+% stand alone files as well as listings with an environment similar to verbatim
+% as well as you can print code snippets using a command similar to \verb.
+%
+% https://wiki.math.ntnu.no/_media/drift/stud/listings.pdf
+%
+
+\RequirePackage{listings} % .. % load required package
+
+%
+% Defaul Listing configuration
+% ----------------------------
+% supported languages: Assembler; bash, C; C++; HTML; Mathematica; Octave; R; Ruby; Scilab; Swift; TeX; Ant; Awk; Basic; Fortran; Java; Perl; make; Pascal; PHP; Python; Scala; SQL, tcl; sh; XML; 
+%
+
+% ................................................................ %
+\lstset{ % ....................................................... %
+	language={}, % ............................................... % default programming language
+	basicstyle=\tiny\ttfamily, % ........................... % the size of the fonts that are used for the code
+	numberstyle=\tiny\color{lst_color_coding_numbers}, % ... % the size and color that are used for numbers
+	keywordstyle=\color{lst_color_coding_keywords}, % ............ % the size and color that are used for keywords
+	commentstyle=\color{lst_color_coding_comments}, % ............ % the size and color that are used for comments
+	stringstyle=\color{lst_color_coding_strings}, % .............. % the size and color that are used for strings
+	escapechar={\&}, % ........................................... % if you want to add LaTeX within your code (fe. ||\color{red})
+	aboveskip=0mm, % ............................................. % vertical space added above code
+	belowskip=0mm, % ............................................. % vertical space added below code
+	columns=flexible, % .......................................... % all characters are typeset at their natural width
+	numbers=none, % .............................................. % no linenumbers
+	breaklines=true, % ........................................... % activates (true) automatic line breaking of long lines
+	showstringspaces=false, % .................................... % don't show spaces in string as _
+	tabsize=2, % ................................................. % sets default tabsize to 4 spaces
+} % .............................................................. %
+% ................................................................ %
+
+%
+% Number Listing configuration
+%
+
+% ................................. %
+\lstdefinestyle{number} % ......... % style used if you want linnumbers (style=number); changes default style
+{ % ............................... %
+	numbers=left, % ............... % numbers left
+	numbersep=8.5mm, % ............ % numbers 2mm from the left inside box
+} % ............................... %
+% ................................. %
+
+% ................................. %
+\lstdefinestyle{num} % ......... % style used if you want linnumbers (style=number); changes default style
+{ % ............................... %
+	numbers=left, % ............... % numbers left
+	numbersep=8.5mm, % ............ % numbers 2mm from the left inside box
+} % ............................... %
+% ................................. %
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+
+%
+% tcolorbox provides an environment for colored and framed text boxes with a heading line.
+% Optionally, such a box can be split in an upper and a lower part. The package
+% tcolorbox can be used for the setting of LATEX examples where one part of the box
+% displays the source code and the other part shows the output. Another common use
+% case is the setting of theorems. The package supports saving and reuse of source code
+% and text parts.
+%
+% https://mirror.kumi.systems/ctan/macros/latex/contrib/tcolorbox/tcolorbox.pdf
+%
+
+%
+% loading additional packages
+%
+
+% ............................. %
+\RequirePackage{float} % ...... % in order to be able to use the figure environment in a minipage environment [minipages are used within the tcolorbox package]
+\RequirePackage{refstyle} % ... % used to create \[...]ref comands
+% ............................. %
+
+%
+% loading tcolorbox
+%
+%    # skins ....... Loads the package tikz [24] and provides additional styles (skins) for the appearance of the colored boxes
+%    # listings .... Loads the package listings [7] and provides additional macros for typesetting listings
+%    # breakable ... Provides support for automatic box breaking from one page to another
+%    # xparse ...... Loads the package xparse and is considered a legacy library kept for compatibility
+%
+
+% ........................................................ %
+\RequirePackage{tcolorbox} % ............................. %
+	\tcbuselibrary{skins,breakable,listings,xparse} % .... %
+% ........................................................ %
+
+%
+% tcolorbox styles
+%
+
+% .................................................................................. % ##################################################################################################################################
+\tcbset{ % ......................................................................... % ##################################################################################################################################
+	tcb_style_defaults/.style={ % .................................................. % # Default Style ##################################################################################################################
+		beforeafter skip balanced = 0.8\baselineskip plus 2pt, % ................... % inserts some vertical space of the before and after the colored box [sets "before skip balanced" & "after skip balanced"].
+		boxsep=2mm, % .............................................................. % sets a common padding between the text content and the frame of the box [sets "left", "right", "top", "bottom" and "middle"].
+		boxrule=2pt, % ............................................................. % sets all rules of the frame.
+		arc=4mm, % ................................................................. % sets the inner radius of the four frame arcs.
+		skin=enhanced, % ........................................................... % this skin translates the drawing commands of the core package into tikz path commands.
+		attach boxed title to top right={yshift=-2mm, xshift=-10mm}, % ............. % put textbox on top right side shifted .... if title is passed.
+		pad at break*=1mm, % ....................................................... % padding on break.
+		listing engine=listings, % ................................................. % sets the ⟨engine⟩ which typesets the listing.
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myBOX/.style={ % ..................................................... % # myBOX Style ####################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_myBOX, % ................................... % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myBOX, % ................................ % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myBOX, % ........................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		text only, % ............................................................... % only text per default; can be changed with "listing only" or "text and listing" inside document.
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myCODE/.style={ % .................................................... % # myCODE Style ###################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_myCODE, % .................................. % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myCODE, % ............................... % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myCODE, % .......................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		listing only, % ............................................................ % only listing per default; don't interpret as a text.
+		breakable, % ............................................................... % if the box is larger than the available space at the current page, the box is automatically broken and continued to the next page.
+		listing options={language={}, texcl=false}, % .............................. % disables syntax highlighting; texcl=false ==> to use a underscore (_) in listing environments
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myCODEEX/.style={ % .................................................. % # myCODEEX Style #################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_myCODEEX, % ................................ % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myCODEEX, % ............................. % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myCODEEX, % ........................ % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		listing only, % ............................................................ % only listing per default; don't interpret as a text.
+		breakable, % ............................................................... % if the box is larger than the available space at the current page, the box is automatically broken and continued to the next page.
+		listing options={language={}, texcl=false}, % .............................. % disables syntax highlighting; texcl=false ==> to use a underscore (_) in listing environments
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myCONFIGEX/.style={ % ................................................ % # myCONFIGEX Style ###############################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_myCONFIGEX, % .............................. % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myCONFIGEX, % ........................... % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myCONFIGEX, % ...................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		listing only, % ............................................................ % only listing per default; don't interpret as a text.
+		breakable, % ............................................................... % if the box is larger than the available space at the current page, the box is automatically broken and continued to the next page.
+		listing options={language={}, texcl=false}, % .............................. % disables syntax highlighting; texcl=false ==> to use a underscore (_) in listing environments
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myFILE/.style={ % .................................................... % # myFILE Style ###################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_myFILE, % .................................. % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myFILE, % ............................... % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myFILE, % .......................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		listing only, % ............................................................ % only listing per default; don't interpret as a text.
+		breakable, % ............................................................... % if the box is larger than the available space at the current page, the box is automatically broken and continued to the next page.
+		listing options={language={}, texcl=false}, % .............................. % disables syntax highlighting; texcl=false ==> to use a underscore (_) in listing environments
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myOUT/.style={ % ..................................................... % # myOUT Style ####################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_myOUT, % ................................... % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myOUT, % ................................ % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myOUT, % ........................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		listing only, % ............................................................ % only listing per default; don't interpret as a text.
+		breakable, % ............................................................... % if the box is larger than the available space at the current page, the box is automatically broken and continued to the next page.
+		listing options={language={}, texcl=false}, % .............................. % disables syntax highlighting; texcl=false ==> to use a underscore (_) in listing environments
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_mySTY/.style={ % ..................................................... % # mySTY Style ####################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_mySTY, % ................................... % sets the color of the borders.
+		colback=myTCB_color_cellbackground_mySTY, % ................................ % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_mySTY, % ........................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		listing only, % ............................................................ % only listing per default; don't interpret as a text.
+		breakable, % ............................................................... % if the box is larger than the available space at the current page, the box is automatically broken and continued to the next page.
+		listing options={keywords={}, texcl=false}, % .............................. % disables syntax highlighting; texcl=false ==> to use a underscore (_) in listing environments
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myTEXEX/.style={ % ................................................... % # myTEXEX Style ##################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_myTEXEX, % ................................. % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myTEXEX, % .............................. % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myTEXEX, % ......................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		listing only, % ............................................................ % only listing per default; don't interpret as a text.
+		breakable, % ............................................................... % if the box is larger than the available space at the current page, the box is automatically broken and continued to the next page.
+		listing options={keywords={}, texcl=false}, % .............................. % disables syntax highlighting; texcl=false ==> to use a underscore (_) in listing environments
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myFIG/.style={ % ..................................................... % # myFIG Style ####################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		colframe=myTCB_color_cellborder_myFIG, % ................................... % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myFIG, % ................................ % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myFIG, % ........................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		attach boxed title to bottom center={yshift=2mm}, % ........................ % put textbox on bottom center shifted in y direction. if title is passed.
+		capture=hbox, % ............................................................ % The content cannot have a lower part and can't be broken. The colored box is sized according to the dimensions of the content.
+		nobeforeafter, % ........................................................... % The colored box is not put into a paragraph and there is no space before or after the box.
+	}, % ........................................................................... % ##################################################################################################################################
+	tcb_style_myTAB/.style={ % ..................................................... % # myTAB Style ####################################################################################################################
+		tcb_style_defaults, % ...................................................... % load the defaults saved in "tcb_style_defaults".
+		titlerule=0mm, % ........................................................... % no borders on title
+		boxrule=1pt, % ............................................................. % sets all rules of the frame.
+		colframe=myTCB_color_cellborder_myTAB, % ................................... % sets the color of the borders.
+		colback=myTCB_color_cellbackground_myTAB, % ................................ % sets the color of the background.
+		colbacktitle=myTCB_color_cellbackground_myTAB, % ........................... % sets the color of the title bakground
+		coltitle=black, % .......................................................... % sets the color of the title
+		fonttitle=\scriptsize\sffamily, % .......................................... % sets the font of the title
+		fontupper=\scriptsize\sffamily, % .......................................... % sets the font of the table
+		attach boxed title to bottom={yshift=-1mm,yshifttext=0mm}, % ............... % attaches titlebox on the bottom of the table
+		boxed title style={ % ...................................................... %
+			boxrule=0mm, % ......................................................... % no borders on title
+			colframe=white, % ...................................................... % no borders on title
+			colback=white, % ....................................................... % no borders on title
+		}, % ....................................................................... %
+		center title, % ............................................................ % title is centered
+		arc=0mm, % ................................................................. % no arcs on corner
+		%borderline={2pt}{-8mm}{myTCB_color_cellborder_myTAB}, % ................... % second border
+		%before skip balanced=4mm, % ............................................... % vertical space before box
+		%after skip balanced=3mm, % ................................................ % vertical space after box
+		nobeforeafter, % ........................................................... % The colored box is not put into a paragraph and there is no space before or after the box.
+	}, % ........................................................................... % ##################################################################################################################################
+} % ................................................................................ % ##################################################################################################################################
+% .................................................................................. %
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "myBOX"
+% ###########
+%
+% -------------------------------------------
+%
+% \begin{myBOX}{OPTIONS}
+%	...
+% \end{myBOX}
+%
+% -------------------------------------------
+%
+% \begin{myBOXlst}{TITLE}{OPTIONS}
+%	...
+% \end{myBOXlst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (listing) --> myBOX
+% -----------------------
+% basically to create text inside a box
+%
+
+% .................................................................................................................................................................................... %
+\newtcolorbox{myBOX}[1]{tcb_style_myBOX,#1} % ........................................................................................................................................ % unnumbered box
+\newtcolorbox[list inside=myBOX, list type=myBOX, auto counter]{myBOXlst}[2]{tcb_style_myBOX, list entry={MyBOX \thetcbcounter{}: #1}, title={MyBOX \thetcbcounter{}}, #2} % ......... % numbered box
+% .................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% .......................................................... %
+\makeatletter % ............................................ %
+	\newcommand{\l@myBOX}{\@dottedtocline{1}{8mm}{8mm}} % .. %
+\makeatother % ............................................. %
+% .......................................................... %
+
+%
+% Name of the Heading created with \listofmyBOX
+%
+
+% ........................................................ %
+\newcommand{\listofmyBOXname}[0]{{List of Boxes}} % ...... %
+% ........................................................ %
+
+%
+% Command \listofmyBOX to create the TOC for myBOX
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% ................................................................................... %
+\newcommand{\listofmyBOX}[0]{\tcblistof[\section*]{myBOX}{\listofmyBOXname}} % ...... %
+% ................................................................................... %
+
+%
+% Creating References for things which are labeled with \label{box:abc}
+%
+%   -) created the command "\boxref{abc}"
+%
+
+\newref{box}{name={BOX~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% ...................................................................................................................................................................................... %
+\newtcblisting{myCODE}[1]{tcb_style_myCODE,#1} % ....................................................................................................................................... % unnumbered box
+\newtcblisting[list inside=myCODE, list type=myCODE, auto counter]{myCODElst}[2]{tcb_style_myCODE, list entry={Code \thetcbcounter{}: #1}, title={Code \thetcbcounter{}}, #2} % ........ % numbered box
+% ...................................................................................................................................................................................... %
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "mySTY"
+% ###########
+%
+% -------------------------------------------
+%
+% \begin{mySTY}{OPTIONS}
+%	...
+% \end{mySTY}
+%
+% -------------------------------------------
+%
+% \begin{mySTYlst}{TITLE}{OPTIONS}
+%	...
+% \end{mySTYlst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (listing) --> mySTY
+% -----------------------
+% basically to create code snippets for LATEX-CLASS or LATEX-STYLE code
+%
+
+% .................................................................................................................................................................................................................... %
+\newtcblisting{mySTY}[1]{tcb_style_mySTY,#1} % ....................................................................................................................................................................... %
+\newtcblisting[list inside=mySTY, auto counter, list type=mySTY]{mySTYlst}[2]{tcb_style_mySTY, list entry={\LaTeX{} Definition \thetcbcounter{}: #1}, title={\LaTeX{} Definition \thetcbcounter{}}, #2} % ............ %
+\newtcblisting[list inside=mySTYdoc, auto counter, list type=mySTYdoc]{mySTYdoclst}[2]{tcb_style_mySTY, list entry={\LaTeX{} Definition \thetcbcounter{}: #1}, title={\LaTeX{} Definition \thetcbcounter{}}, #2} % ... %
+% .................................................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% ............................................................. %
+\makeatletter % ............................................... %
+	\newcommand{\l@mySTY}{\@dottedtocline{1}{8mm}{8mm}} % ..... %
+	\newcommand{\l@mySTYdoc}{\@dottedtocline{1}{8mm}{8mm}} % .. %
+\makeatother % ................................................ %
+% ............................................................. %
+
+%
+% Name of the Heading created with \listofmySTY
+%
+
+% ....................................................................... %
+\newcommand{\listofmySTYname}[0]{{List of \LaTeX{} Definitions}} % ...... %
+\newcommand{\listofmySTYdocname}[0]{{List of \LaTeX{} Definitions}} % ... %
+% ....................................................................... %
+
+%
+% Command \listofmySTY to create the TOC for mySTY
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% ............................................................................................ %
+\newcommand{\listofmySTY}[0]{\tcblistof[\section*]{mySTY}{\listofmySTYname}} % ............... %
+\newcommand{\listofmySTYdoc}[0]{\tcblistof[\section*]{mySTYdoc}{\listofmySTYdocname}} % ...... %
+% ............................................................................................ %
+
+%
+% Creating References for things which are labeled with \label{sty:abc}
+%
+%   -) created the command "\styref{abc}"
+%
+
+\newref{sty}{name={\LaTeX{} Definition~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "myTEXEX"
+% #############
+%
+% -------------------------------------------
+%
+% \begin{myTEXEX}{OPTIONS}
+%	...
+% \end{myTEXEX}
+%
+% -------------------------------------------
+%
+% \begin{myTEXEXlst}{TITLE}{OPTIONS}
+%	...
+% \end{myTEXEXlst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (listing) --> myTEXEX
+% --------------------------
+% basically to create code snippets for LATEX Examples
+%
+
+% ...................................................................................................................................................................................................................... %
+\newtcblisting{myTEXEX}[1]{tcb_style_myTEXEX,#1} % ..................................................................................................................................................................... %
+\newtcblisting[list inside=myTEXEX, auto counter, list type=myTEXEX]{myTEXEXlst}[2]{tcb_style_myTEXEX, list entry={\LaTeX{} Example \thetcbcounter{}: #1}, title={\LaTeX{} Example \thetcbcounter{}}, #2} % ............ %
+\newtcblisting[list inside=myTEXEXdoc, auto counter, list type=myTEXEXdoc]{myTEXEXdoclst}[2]{tcb_style_myTEXEX, list entry={\LaTeX{} Example \thetcbcounter{}: #1}, title={\LaTeX{} Example \thetcbcounter{}}, #2} % ... %
+% ...................................................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% ............................................................... %
+\makeatletter % ................................................. %
+	\newcommand{\l@myTEXEX}{\@dottedtocline{1}{8mm}{8mm}} % ..... %
+	\newcommand{\l@myTEXEXdoc}{\@dottedtocline{1}{8mm}{8mm}} % .. %
+\makeatother % .................................................. %
+% ............................................................... %
+
+%
+% Name of the Heading created with \listofmyTEXEX
+%
+
+% ....................................................................... %
+\newcommand{\listofmyTEXEXname}[0]{{List of \LaTeX{} Examples}} % ........ %
+\newcommand{\listofmyTEXEXdocname}[0]{{List of \LaTeX{} Examples}} % .... %
+% ....................................................................... %
+
+%
+% Command \listofmyTEXEX to create the TOC for myTEXEX
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% ............................................................................................... %
+\newcommand{\listofmyTEXEX}[0]{\tcblistof[\section*]{myTEXEX}{\listofmyTEXEXname}} % ............ %
+\newcommand{\listofmyTEXEXdoc}[0]{\tcblistof[\section*]{myTEXEXdoc}{\listofmyTEXEXdocname}} % ...... %
+% ............................................................................................... %
+
+%
+% Creating References for things which are labeled with \label{texex:abc}
+%
+%   -) created the command "\styref{abc}"
+%
+
+\newref{texex}{name={\LaTeX{} Example~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "myFIG"
+% #############
+%
+% -------------------------------------------
+%
+% \begin{myFIG}{OPTIONS}
+%	...
+% \end{myFIG}
+%
+% -------------------------------------------
+%
+% \begin{myFIGlst}{TITLE}{OPTIONS}
+%	...
+% \end{myFIGlst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (tcbox) --> myFIG
+% -----------------------
+% basically to create code figures
+%
+
+%
+% list inside .......... Entries to this list are saved to a file which gets the ⟨name⟩ as file name extension.The list is referenced by this name in\tcblistof.
+% list type ............ a macro \l@⟨type⟩ has to exist which controls the format of the list entry. The default type is\l@tcolorbox
+% list entry ........... this describes the ⟨text⟩ for an entry into the generated list
+% auto counter ......... Creates a new counter automatically. The counter value is referenced by \thetcbcounter.
+%
+
+% ................................................................................................................................................................................... %
+\newtcolorbox{myFIG}[1]{tcb_style_myFIG,#1} % ....................................................................................................................................... % unnumbered box
+\newtcolorbox[list inside=myFIG, auto counter, list type=myFIG]{myFIGlst}[2]{tcb_style_myFIG, list entry={Figure \thetcbcounter{}: #1}, title={Figure \thetcbcounter{}}, #2} % ...... % numbered box
+% ................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% .......................................................... %
+\makeatletter % ............................................ %
+	\newcommand{\l@myFIG}{\@dottedtocline{1}{8mm}{8mm}} % .. %
+\makeatother % ............................................. %
+% .......................................................... %
+
+%
+% Name of the Heading created with \listofmyFIG
+%
+
+% .......................................................... %
+\newcommand{\listofmyFIGname}[0]{{List of Figures}} % ...... %
+% .......................................................... %
+
+%
+% Command \listofmyFIG to create the TOC for myFIG
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% ................................................................................... %
+\newcommand{\listofmyFIG}[0]{\tcblistof[\section*]{myFIG}{\listofmyFIGname}} % ...... %
+% ................................................................................... %
+
+%
+% Creating References for things which are labeled with \label{fig:abc}
+%
+%   -) created the command "\figref{abc}"
+%
+
+\newref{fig}{name={Figure~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "myCODEEX"
+% ##############
+%
+% -------------------------------------------
+%
+% \begin{myCODEEX}{OPTIONS}
+	%	...
+	% \end{myCODEEX}
+%
+% -------------------------------------------
+%
+% \begin{myCODEEXlst}{TITLE}{OPTIONS}
+	%	...
+	% \end{myCODEEXlst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (listing) --> myCODEEX
+% -----------------------
+% basically to create code snippets
+%
+
+% ..................................................................................................................................................................................................................... %
+\newtcblisting{myCODEEX}[1]{tcb_style_myCODEEX,#1} % .................................................................................................................................................................. %
+\newtcblisting[list inside=myCODEEX, auto counter, list type=myCODEEX]{myCODEEXlst}[2]{tcb_style_myCODEEX, list entry={Code Example \thetcbcounter{}: #1}, title={Code Example \thetcbcounter{}}, #2} % ............... %
+% ..................................................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% ................................................................. %
+\makeatletter % ................................................... %
+	\newcommand{\l@myCODEEX}{\@dottedtocline{1}{8mm}{8mm}} % ...... %
+\makeatother % .................................................... %
+% ................................................................. %
+
+%
+% Name of the Heading created with \listofmyCODEEX
+%
+
+% ....................................................................... %
+\newcommand{\listofmyCODEEXname}[0]{{List of Code Examples}} % .......... %
+% ....................................................................... %
+
+%
+% Command \listofmyCODEEX to create the TOC for myCODEEX
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% ............................................................................................ %
+\newcommand{\listofmyCODEEX}[0]{\tcblistof[\section*]{myCODEEX}{\listofmyCODEEXname}} % ...... %
+% ............................................................................................ %
+
+%
+% Creating References for things which are labeled with \label{codeex:abc}
+%
+%   -) created the command "\codeexref{abc}"
+%
+
+\newref{codeex}{name={Code Example~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "myCONFIGEX"
+% ##############
+%
+% -------------------------------------------
+%
+% \begin{myCONFIGEX}{OPTIONS}
+%	...
+% \end{myCONFIGEX}
+%
+% -------------------------------------------
+%
+% \begin{myCONFIGEXlst}{TITLE}{OPTIONS}
+%	...
+% \end{myCONFIGEXlst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (listing) --> myCONFIGEX
+% -----------------------
+% basically to create config snippets
+%
+
+% .......................................................................................................................................................................................................................... %
+\newtcblisting{myCONFIGEX}[1]{tcb_style_myCONFIGEX,#1} 
+\newtcblisting[list inside=myCONFIGEX, auto counter, list type=myCONFIGEX]{myCONFIGEXlst}[2]{tcb_style_myCONFIGEX, list entry={Configuration Example \thetcbcounter{}: #1}, title={Configuration Example \thetcbcounter{}}, #2}
+% .......................................................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% ................................................................... %
+\makeatletter % ..................................................... %
+	\newcommand{\l@myCONFIGEX}{\@dottedtocline{1}{8mm}{8mm}} % ...... %
+\makeatother % ...................................................... %
+% ................................................................... %
+
+%
+% Name of the Heading created with \listofmyCONFIGEX
+%
+
+% .................................................................................. %
+\newcommand{\listofmyCONFIGEXname}[0]{{List of Configuration Examples}} % .......... %
+% .................................................................................. %
+
+%
+% Command \listofmyCONFIGEX to create the TOC for myCONFIGEX
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% .................................................................................................. %
+\newcommand{\listofmyCONFIGEX}[0]{\tcblistof[\section*]{myCONFIGEX}{\listofmyCONFIGEXname}} % ...... %
+% .................................................................................................. %
+
+%
+% Creating References for things which are labeled with \label{configex:abc}
+%
+%   -) created the command "\configexref{abc}"
+%
+
+\newref{configex}{name={Configuration Example~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "myFILE"
+% ##############
+%
+% -------------------------------------------
+%
+% \begin{myFILE}{OPTIONS}
+	%	...
+	% \end{myFILE}
+%
+% -------------------------------------------
+%
+% \begin{myFILElst}{TITLE}{OPTIONS}
+	%	...
+	% \end{myFILElst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (listing) --> myFILE
+% -----------------------
+% basically to create file snippets
+%
+
+% .......................................................................................................................................................................................................................... %
+\newtcblisting{myFILE}[1]{tcb_style_myFILE,#1}  % .......................................................................................................................................................................... %
+\newtcblisting[list inside=myFILE, auto counter, list type=myFILE]{myFILElst}[2]{tcb_style_myFILE, list entry={File Example \thetcbcounter{}: #1}, title={File Example \thetcbcounter{}}, #2} % ............................ %
+% .......................................................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% ............................................................... %
+\makeatletter % ................................................. %
+	\newcommand{\l@myFILE}{\@dottedtocline{1}{8mm}{8mm}} % ...... %
+\makeatother % .................................................. %
+% ............................................................... %
+
+%
+% Name of the Heading created with \listofmyFILE
+%
+
+% ..................................................................... %
+\newcommand{\listofmyFILEname}[0]{{List of File Examples}} % .......... %
+% ..................................................................... %
+
+%
+% Command \listofmyFILE to create the TOC for myFILE
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% .................................................................................................. %
+\newcommand{\listofmyFILE}[0]{\tcblistof[\section*]{myFILE}{\listofmyFILEname}} % ...... %
+% .................................................................................................. %
+
+%
+% Creating References for things which are labeled with \label{file:abc}
+%
+%   -) created the command "\fileref{abc}"
+%
+
+\newref{file}{name={File Example~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "myOUT"
+% ##############
+%
+% -------------------------------------------
+%
+% \begin{myOUT}{OPTIONS}
+%	...
+% \end{myOUT}
+%
+% -------------------------------------------
+%
+% \begin{myOUTlst}{TITLE}{OPTIONS}
+%	...
+% \end{myOUTlst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (listing) --> myOUT
+% -----------------------
+% basically to create cmd output snippets
+%
+
+% .......................................................................................................................................................................................................................... %
+\newtcblisting{myOUT}[1]{tcb_style_myOUT,#1}  % .......................................................................................................................................................................... %
+\newtcblisting[list inside=myOUT, auto counter, list type=myOUT]{myOUTlst}[2]{tcb_style_myOUT, list entry={Output Example \thetcbcounter{}: #1}, title={Output Example \thetcbcounter{}}, #2} % ............................ %
+% .......................................................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% ............................................................... %
+\makeatletter % ................................................. %
+	\newcommand{\l@myOUT}{\@dottedtocline{1}{8mm}{8mm}} % ....... %
+\makeatother % .................................................. %
+% ............................................................... %
+
+%
+% Name of the Heading created with \listofmyOUT
+%
+
+% ...................................................................... %
+\newcommand{\listofmyOUTname}[0]{{List of Output Examples}} % .......... %
+% ...................................................................... %
+
+%
+% Command \listofmyOUT to create the TOC for myOUT
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% ................................................................................... %
+\newcommand{\listofmyOUT}[0]{\tcblistof[\section*]{myOUT}{\listofmyOUTname}} % ...... %
+% ................................................................................... %
+
+%
+% Creating References for things which are labeled with \label{out:abc}
+%
+%   -) created the command "\outref{abc}"
+%
+
+\newref{out}{name={Output Example~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%
+% ENV "myTAB"
+% ##############
+%
+% -------------------------------------------
+%
+% \begin{myTAB}{OPTIONS}
+%	...
+% \end{myTAB}
+%
+% -------------------------------------------
+%
+% \begin{myTABlst}{TITLE}{OPTIONS}
+%	...
+% \end{vlst}
+%
+% -------------------------------------------
+%
+
+%
+% ENV (listing) --> myTAB
+% -----------------------
+% basically to create tables
+%
+
+%
+% loading required packages
+%
+
+% ............................ %
+\RequirePackage{tabularx} % .. % 
+\RequirePackage{colortbl} % .. % 
+\RequirePackage{multirow} % .. %
+% ............................ %
+
+%
+% create columntype C
+% basically the same as X just centering instead of left
+%
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+% ..................................................... %
+\setlength{\arrayrulewidth}{1pt} % .................... % This sets the thickness of the borders of the table
+\setlength{\tabcolsep}{2mm} % ......................... % The space between the text and the left/right border of its containing cell
+% ..................................................... %
+
+% ........................................... %
+\renewcommand\tabularxcolumn[1]{m{#1}} % .... % for vertical centering text in X column
+% ........................................... %
+
+% ............................................................................................................................................................................................... %
+\newtcolorbox{myTAB}[1]{tcb_style_myTAB,#1}  % ................................................................................................................................... %
+\newtcolorbox[list inside=myTAB, auto counter, list type=myTAB]{myTABlst}[2]{tcb_style_myTAB, list entry={Table \thetcbcounter{}: #1}, title={Table \thetcbcounter{}}, #2} % .... %
+% ............................................................................................................................................................................................... %
+
+%
+% TOC Entry
+%
+
+% ............................................................... %
+\makeatletter % ................................................. %
+	\newcommand{\l@myTAB}{\@dottedtocline{1}{8mm}{8mm}} % ....... %
+\makeatother % .................................................. %
+% ............................................................... %
+
+%
+% Name of the Heading created with \listofmyOUT
+%
+
+% ............................................................. %
+\newcommand{\listofmyTABname}[0]{{List of Tables}} % .......... %
+% ............................................................. %
+
+%
+% Command \listofmyOUT to create the TOC for myOUT
+% The List of .... will be added as an section (without a TOC entry)
+%
+
+% ................................................................................... %
+\newcommand{\listofmyTAB}[0]{\tcblistof[\section*]{myTAB}{\listofmyTABname}} % ...... %
+% ................................................................................... %
+
+%
+% Creating References for things which are labeled with \label{out:abc}
+%
+%   -) created the command "\outref{abc}"
+%
+
+\newref{tab}{name={Table~}}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################
+% ###########################################################################################################################################################################

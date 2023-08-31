@@ -1,0 +1,26 @@
+\documentclass[]{myHOWTO-V1}
+	\title{Using the myHOWTO Class in \LaTeX}
+	\version{1.0}
+	\author{Norbert EHART}
+	\date{\today}
+	
+\usepackage{lipsum}
+
+\begin{document}
+
+\listoffigures
+
+This is \emph{\autoref{fig:LaTeXpic01}}.
+
+\begin{figure}[h]
+	\centering
+	\begin{tcb_figure}
+		\centering
+		\includegraphics[scale=0.2]{zz_bsp_file_LOF_LaTeX.jpg}
+	\end{tcb_figure}
+	\vspace{-4mm}
+	\caption[LaTeX{} Picture]{\LaTeX{} Picture\cite{edx2022}}
+	\label{fig:LaTeXpic01}
+\end{figure}
+
+\end{document}

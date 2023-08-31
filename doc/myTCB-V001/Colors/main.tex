@@ -1,0 +1,156 @@
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\documentclass[]{myHOWTO-V001}
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\usepackage{myTCB-V001}
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\title{The \textbf{myTCB-V1} Package\\{\small Colors}}
+\version{1.00}
+\author{Norbert EHART (norbert@ehart.net)}
+\date{\today}
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\begin{document}
+	
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\selectlanguage{english}
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\maketitle
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\tableofcontents
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\section{Introduction}
+
+This tutorial shows how to load the \emph{myTCB-V1} package and how to change the predefined colors. The \emph{myTCB-V1} package has predefined colors, which are shown in \styref{clrpackages}.
+
+\begin{mySTYdoclst}{Packages}{label={sty:clrpackages}}
+\definecolor{myTCB_color_cellborder_myBOX}{HTML}{FF0000}
+\definecolor{myTCB_color_cellbackground_myBOX}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_myCODE}{HTML}{695E93}
+\definecolor{myTCB_color_cellbackground_myCODE}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_mySTY}{HTML}{006400}
+\definecolor{myTCB_color_cellbackground_mySTY}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_myTEXEX}{HTML}{0D26D5}
+\definecolor{myTCB_color_cellbackground_myTEXEX}{HTML}{FEEFDE}
+
+\definecolor{lst_color_coding_comments}{HTML}{009900}
+\definecolor{lst_color_coding_keywords}{HTML}{0000FC}
+\definecolor{lst_color_coding_numbers}{HTML}{474747}
+\definecolor{lst_color_coding_strings}{HTML}{9400D1}
+
+\definecolor{myTCB_color_cellborder_myFIG}{HTML}{45B7B6}
+\definecolor{myTCB_color_cellbackground_myFIG}{HTML}{FFFFFF}
+
+\definecolor{myTCB_color_cellborder_myCODEEX}{HTML}{411B03}
+\definecolor{myTCB_color_cellbackground_myCODEEX}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_myTEX}{HTML}{C84FC7}
+\definecolor{myTCB_color_cellbackground_myTEX}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_myCONFIG}{HTML}{080F7F}
+\definecolor{myTCB_color_cellbackground_myCONFIG}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_myCONFIGEX}{HTML}{6502A5}
+\definecolor{myTCB_color_cellbackground_myCONFIGEX}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_myFILE}{HTML}{C3771C}
+\definecolor{myTCB_color_cellbackground_myFILE}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_myOUT}{HTML}{292D2D}
+\definecolor{myTCB_color_cellbackground_myOUT}{HTML}{FEEFDE}
+
+\definecolor{myTCB_color_cellborder_myTAB}{HTML}{2185DD}
+\definecolor{myTCB_color_cellbackground_myTAB}{HTML}{FEEFDE}
+\end{mySTYdoclst}
+
+To load the package, write \Verb|\usepackage{myTCB-V1}| in the preamble of your document. To use this package, it is highly recommended to have the complete \LaTeX{} distribution installed. This will avoid problems with dependencies.
+
+\begin{myTEXEXdoclst}{Loading myTCB-V1}{label={texex:loadingmyTCBv1}}
+\usepackage{myTCB-V1}
+\end{myTEXEXdoclst}
+
+You have simply to use the command \verb|\definecolor{[...]}{[...]}{[...]}| in the preamble to redefine colors. A sample configuration is illustriated in \texexref{redefinecolor}.
+
+\begin{myTEXEXdoclst}{Loading myTCB-V1}{label={texex:redefinecolor}}
+\usepackage{myTCB-V1}
+	\definecolor{myTCB_color_cellborder_myBOX}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myCODE}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_mySTY}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myTEXEX}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myFIG}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myCODEEX}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myTEX}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myCONFIG}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myCONFIGEX}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myFILE}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myOUT}{HTML}{000000}
+	\definecolor{myTCB_color_cellborder_myTAB}{HTML}{000000}
+\end{myTEXEXdoclst}
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\clearpage
+\pagestyle{empty}
+\printbibliography[heading=bibnumbered]
+\clearpage
+\pagestyle{plain}
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
+
+\end{document}
+
+%
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+% ####################################################################################################################################################################################
+%
