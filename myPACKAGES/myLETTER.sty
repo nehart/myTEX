@@ -1,0 +1,99 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{classicletter}[2019/02/03]
+
+%
+%
+%
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{textcomp}
+\RequirePackage{fourier,marvosym}
+\RequirePackage[document]{ragged2e}
+\RequirePackage[scaled=.7]{beramono}
+\RequirePackage{microtype}
+\RequirePackage[top=2.0cm,bottom=2.0cm,left=2.0cm,right=2.0cm]{geometry}
+
+%
+% \hfuzz specifies the amount by which the content in an \hbox can exceed the width of that 
+% \hbox before being considered overfull. 
+%
+
+\hfuzz=10mm
+
+%
+% \vfuzz specifies the amount by which the content in a \vbox can exceed the height of that 
+% \vbox before being reported as overfull.
+%
+
+\vfuzz=10mm
+
+%
+%
+%
+
+\pagestyle{empty}
+\setlength{\parskip}{2mm}
+\setlength{\parindent}{0mm}
+\setlength{\baselineskip}{0mm}
+
+%
+% Variable Names
+%
+
+\makeatletter
+	\newcommand*{\firstname}[1]{\def\@firstname{#1}}
+	\newcommand*{\familyname}[1]{\def\@familyname{#1}}
+	\newcommand*{\address}[3]{\def\@addressstreet{#1}\def\@addresscity{#2}\def\@addresscountry{#3}}
+	\newcommand*{\mobile}[1]{\def\@mobile{#1}}
+	\newcommand*{\email}[1]{\def\@email{#1}}
+\makeatother
+
+\makeatletter
+	\newcommand*{\subjectmatter}[1]{\def\@subjectmatter{#1}}
+\makeatother
+
+\makeatletter
+	\newcommand*{\tolineone}[1]{\def\@tolineone{#1}}
+	\newcommand*{\tolinetwo}[1]{\def\@tolinetwo{#1}}
+	\newcommand*{\tolinethree}[1]{\def\@tolinethree{#1}}
+	\newcommand*{\tolinefour}[1]{\def\@tolinefour{#1}}
+\makeatother
+
+%
+% letterhead
+%
+
+\makeatletter
+	\newcommand*{\letterhead}
+	{
+		\begin{center}
+			{
+                \ttfamily \large \textbf{\LARGE \@firstname \ \@familyname} \\
+                \@mobile \\
+                \@email \\[1.5mm]
+    			\@addressstreet, \@addresscity, \@addresscountry \\[-1mm]
+    			
+            }
+		\end{center}
+		
+		\vspace*{6mm}
+		
+		{
+		\@tolineone \\
+		\@tolinetwo \\
+		\@tolinethree \\
+		\@tolinefour
+		}
+		
+		\begin{flushright}
+			%\date{\today}
+			\today
+		\end{flushright}
+		
+		\vspace*{34mm}
+
+		\textbf{Betreff:} \@subjectmatter
+
+		\vspace*{12mm}
+	}
+\makeatother

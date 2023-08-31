@@ -1,0 +1,60 @@
+\documentclass[a4paper,11pt]{article}
+
+%
+% Package
+% -------
+%
+\usepackage{myLETTER}
+
+%
+% German
+% ------
+%
+\usepackage[ngerman]{babel}
+
+%
+% data
+% ----
+%
+
+\firstname{John}
+\familyname{Doe}
+\address{123 Lincoln Ave.}{11575 New York}{USA}
+\mobile{+43 676 11111111}
+\email{john@doe.net}
+
+\tolineone{Google LLC (HR)}
+\tolinetwo{111 8th Avenue}
+\tolinethree{10011 New York}
+\tolinefour{USA}
+
+\subjectmatter{mySUBJECT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\letterhead
+
+Dear Ladies and Gentlemen,
+
+Here is the text you would like to write.
+
+\vfill
+
+\makeatletter
+    \begin{flushright}
+    	\begin{minipage}{0.40\textwidth}
+    		\begin{flushright}
+    			\@firstname~\@familyname
+    		\end{flushright}
+    	\end{minipage}
+    \end{flushright}
+\makeatother
+
+\end{document}

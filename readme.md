@@ -1,3 +1,3 @@
-# Classic Letter (LaTeX Package)
+# myTEX (LaTeX Packages)
 
 tbc ...
